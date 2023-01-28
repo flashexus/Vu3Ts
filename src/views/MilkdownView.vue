@@ -1,7 +1,7 @@
 <template>
   <main>
     <div>
-      <h1>Vite + Volorの開発体験について</h1>
+      <h1>Vite + Volarの開発体験について</h1>
 
       <video
         width="750"
