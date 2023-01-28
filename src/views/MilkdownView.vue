@@ -1,7 +1,14 @@
 <template>
   <main>
     <div>
-      <h1></h1>
+      <h1>Vite + Volorの開発体験について</h1>
+
+      <video
+        width="750"
+        height="300"
+        controls
+        src="@/assets/video/vite_volor_demo.mp4"
+      ></video>
       <MilkdownEditor v-model="content" />
     </div>
   </main>
@@ -11,7 +18,9 @@
 import { ref } from "vue";
 import MilkdownEditor from "@/components/MilkdownEditor.vue";
 
-const content = ref<string>("# Vue3 +  Milkdown");
+const content = ref<string>(
+  "文字で書いても分かりづらいと思ったので動画参照(´∀｀*)"
+);
 </script>
 
 <style>
