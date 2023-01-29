@@ -19,7 +19,7 @@ import { ref } from "vue";
 import MilkdownEditor from "@/components/MilkdownEditor.vue";
 
 const content = ref<string>(
-  "文字で書いても分かりづらいと思ったので動画参照(´∀｀*)"
+  "文字で書いても分かりづらいと思ったので動画参照してください(´∀｀*)"
 );
 </script>
 
