@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import MildDown from "../views/MilkdownView.vue";
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    { path: "/:pathMatch(.*)*", redirect: "/" },
     {
       path: "/",
       name: "home",
@@ -21,7 +22,6 @@ const router = createRouter({
       path: "/wiki",
       name: "wiki",
       component: () => import("../views/MilkdownView.vue"),
-      //component: MildDown,
     },
   ],
 });
