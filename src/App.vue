@@ -4,7 +4,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
-  <header>
+  <header class="d-flex align-center flex-column mb-6 bg-surface-variant">
     <img
       alt="Vue logo"
       class="logo"
@@ -23,10 +23,10 @@ import HelloWorld from "./components/HelloWorld.vue";
       </nav>
     </div>
   </header>
-
-  <RouterView />
+  <v-container>
+    <RouterView />
+  </v-container>
 </template>
-
 <style scoped>
 header {
   line-height: 1.5;
