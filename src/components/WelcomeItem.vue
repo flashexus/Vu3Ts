@@ -13,6 +13,14 @@
 </template>
 
 <style scoped>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
 .item {
   margin-top: 2rem;
   display: flex;
