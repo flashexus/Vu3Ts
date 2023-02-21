@@ -1,26 +1,22 @@
 <script lang="ts">
 import { RouterView } from "vue-router";
-
+import { ClickOutside } from "vuetify/lib/directives";
 export default {
   data: () => ({
     drawer: false,
     group: null,
     items: [
       {
-        title: "Foo",
+        title: "Home",
         value: "foo",
       },
       {
-        title: "Bar",
+        title: "About",
         value: "bar",
       },
       {
-        title: "Fizz",
+        title: "Wiki",
         value: "fizz",
-      },
-      {
-        title: "Buzz",
-        value: "buzz",
       },
     ],
   }),
@@ -31,15 +27,17 @@ export default {
     },
   },
 };
+const Click = () => {
+  console.log("test");
+};
 </script>
-
 <template>
   <v-container>
-    <v-card>
-      <v-layout color="black">
+    <v-card color="grey-darken-4">
+      <v-layout full-height>
         <!-- <v-system-bar color="deep-purple darken-3"></v-system-bar> -->
 
-        <v-app-bar color="grey-darken-4" prominent>
+        <v-app-bar prominent>
           <v-app-bar-nav-icon
             variant="text"
             @click.stop="drawer = !drawer"
@@ -49,13 +47,32 @@ export default {
 
           <v-spacer></v-spacer>
 
-          <v-btn variant="text" icon="mdi-magnify"></v-btn>
+          <v-btn
+            variant="text"
+            href="https://vuetifyjs.com/en/"
+            icon="mdi-vuetify"
+            color="light-blue"
+          ></v-btn>
 
-          <v-btn variant="text" icon="mdi-filter"></v-btn>
+          <v-btn
+            variant="text"
+            href="https://ja.vuejs.org/api/composition-api-setup.html"
+            icon="mdi-vuejs"
+            color="teal"
+          ></v-btn>
         </v-app-bar>
 
         <v-navigation-drawer v-model="drawer" location="bottom" temporary>
           <v-list :items="items"></v-list>
+          <!-- <v-list>
+              <v-list-item
+                v-for="n in 5"
+                :key="n"
+                @click="() => {}"
+              >
+                <v-list-item-title>Option {{ n }}</v-list-item-title>
+              </v-list-item>
+            </v-list> -->
         </v-navigation-drawer>
       </v-layout>
       <RouterView />

@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <v-container bg-color="grey-darken-4">
     <div>
       <h1>Vite + Volarの開発体験について</h1>
 
@@ -11,7 +11,7 @@
       ></video>
       <MilkdownEditor v-model="content" />
     </div>
-  </main>
+  </v-container>
 </template>
 
 <script setup lang="ts">

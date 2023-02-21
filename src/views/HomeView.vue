@@ -6,33 +6,35 @@ import HelloWorld from "../components/HelloWorld.vue";
 </script>
 
 <template>
-  <v-row>
-    <v-col cols="6">
-      <header class="d-flex align-center flex-column">
-        <img
-          alt="Vue logo"
-          class="logo"
-          src="@/assets/logo.svg"
-          width="125"
-          height="125"
-        />
-        <div class="wrapper">
-          <HelloWorld msg="Vue3 旅日記" />
+  <v-container>
+    <v-row>
+      <v-col cols="6">
+        <header class="d-flex align-center flex-column">
+          <img
+            alt="Vue logo"
+            class="logo"
+            src="@/assets/logo.svg"
+            width="125"
+            height="125"
+          />
+          <div class="wrapper">
+            <HelloWorld msg="Vue3 旅日記" />
 
-          <nav>
-            <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/about">About</RouterLink>
-            <RouterLink to="/wiki">Wiki</RouterLink>
-          </nav>
-        </div>
-      </header>
-    </v-col>
-    <v-col cols="6">
-      <main>
-        <TheWelcome />
-      </main>
-    </v-col>
-  </v-row>
+            <nav>
+              <RouterLink to="/">Home</RouterLink>
+              <RouterLink to="/about">About</RouterLink>
+              <RouterLink to="/wiki">Wiki</RouterLink>
+            </nav>
+          </div>
+        </header>
+      </v-col>
+      <v-col cols="6">
+        <main>
+          <TheWelcome />
+        </main>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 <style scoped>
 header {
