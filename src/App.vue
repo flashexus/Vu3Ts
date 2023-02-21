@@ -1,6 +1,6 @@
 <script lang="ts">
 import { RouterView } from "vue-router";
-import { ClickOutside } from "vuetify/lib/directives";
+
 export default {
   data: () => ({
     drawer: false,
@@ -26,9 +26,6 @@ export default {
       this.drawer = false;
     },
   },
-};
-const Click = () => {
-  console.log("test");
 };
 </script>
 <template>
