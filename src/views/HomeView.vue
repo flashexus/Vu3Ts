@@ -3,6 +3,21 @@ import { RouterLink } from "vue-router";
 
 import TheWelcome from "../components/TheWelcome.vue";
 import HelloWorld from "../components/HelloWorld.vue";
+
+const items = [
+  {
+    title: "Home",
+    path: "/",
+  },
+  {
+    title: "About",
+    path: "/about",
+  },
+  {
+    title: "Wiki",
+    path: "/wiki",
+  },
+];
 </script>
 
 <template>
@@ -21,9 +36,11 @@ import HelloWorld from "../components/HelloWorld.vue";
             <HelloWorld msg="Vue3 旅日記" />
 
             <nav>
-              <RouterLink to="/">Home</RouterLink>
-              <RouterLink to="/about">About</RouterLink>
-              <RouterLink to="/wiki">Wiki</RouterLink>
+              <span v-for="item in items" :key="item.title">
+                <router-link :to="{ path: item.path }"
+                  >{{ item.title }}
+                </router-link>
+              </span>
             </nav>
           </div>
         </header>

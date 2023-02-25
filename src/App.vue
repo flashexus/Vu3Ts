@@ -8,15 +8,15 @@ export default {
     items: [
       {
         title: "Home",
-        value: "foo",
+        path: "/",
       },
       {
         title: "About",
-        value: "bar",
+        path: "/about",
       },
       {
         title: "Wiki",
-        value: "fizz",
+        path: "/wiki",
       },
     ],
   }),
@@ -60,16 +60,16 @@ export default {
         </v-app-bar>
 
         <v-navigation-drawer v-model="drawer" location="bottom" temporary>
-          <v-list :items="items"></v-list>
-          <!-- <v-list>
-              <v-list-item
-                v-for="n in 5"
-                :key="n"
-                @click="() => {}"
-              >
-                <v-list-item-title>Option {{ n }}</v-list-item-title>
-              </v-list-item>
-            </v-list> -->
+          <!-- <v-list :items="items"></v-list> -->
+          <v-list>
+            <v-list-item v-for="item in items" :key="item.title">
+              <v-list-item-title>
+                <router-link :to="{ path: item.path }"
+                  >{{ item.title }}
+                </router-link>
+              </v-list-item-title>
+            </v-list-item>
+          </v-list>
         </v-navigation-drawer>
       </v-layout>
       <RouterView />
