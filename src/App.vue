@@ -1,6 +1,7 @@
-<script lang="ts">
+<script lang="ts" setup>
 import { RouterView } from "vue-router";
-
+</script>
+<script lang="ts">
 export default {
   data: () => ({
     drawer: false,
@@ -15,8 +16,8 @@ export default {
         path: "/about",
       },
       {
-        title: "Wiki",
-        path: "/wiki",
+        title: "Article",
+        path: "/articles",
       },
     ],
   }),

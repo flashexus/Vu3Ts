@@ -14,8 +14,8 @@ const items = [
     path: "/about",
   },
   {
-    title: "Wiki",
-    path: "/wiki",
+    title: "Article",
+    path: "/articles",
   },
 ];
 </script>
