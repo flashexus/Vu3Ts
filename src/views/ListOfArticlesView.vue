@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { RouterLink } from "vue-router";
+import CardArticle from "../components/CardArticle.vue";
 </script>
 <script lang="ts">
 export default {
@@ -9,7 +10,18 @@ export default {
 };
 </script>
 <template>
+  <!-- Todo CardArticleコンポーネントを作成する-->
+  <!-- 謎：なぜかProps渡しすると'@/assets/images/***/.jpeg で名前解決できない' -->
   <v-container>
+    <CardArticle
+      :article="{
+        title: 'test',
+        subtitle: 'test',
+        discription: 'test',
+        icon_path: 'src/assets/images/vite_image.jpeg',
+        name: 'article1',
+      }"
+    ></CardArticle>
     <v-card class="mx-auto" max-width="344">
       <v-img
         v-bind:src="require('@/assets/images/vite_image.jpeg')"
