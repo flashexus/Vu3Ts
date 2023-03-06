@@ -2,20 +2,20 @@
 defineProps<{
   article: PropsArticleParam;
 }>();
-
-type PropsArticleParam = {
-  title: string;
-  subtitle: string;
-  discription: string;
-  icon_path: string;
-  name: string;
-};
 </script>
 <script lang="ts">
 export default {
   data: () => ({
     show: false,
   }),
+};
+
+export type PropsArticleParam = {
+  title: string;
+  subtitle: string;
+  discription: string;
+  icon_path: string;
+  name: string;
 };
 </script>
 <template>
