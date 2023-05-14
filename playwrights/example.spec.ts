@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { exec } from "child_process";
-const baseURL = "http://localhost:5173";
+const baseURL = "/";
 test("has title", async ({ page }) => {
   await page.goto(baseURL);
   //  await page.screenshot({ path: `screenshot.png` });
@@ -24,7 +24,7 @@ test("get root items", async ({ page }) => {
 });
 
 test("get article item", async ({ page }) => {
-  await page.goto("http://localhost:5173/article/1");
+  await page.goto("/article/1");
 
   // 指定のページに遷移したことを確認する
   await expect(page).toHaveURL(/.*article/);
