@@ -73,13 +73,19 @@ export default defineConfig({
   ],
 
   /* Run your local dev server before starting the tests */
+  // webServer: {
+  //   command: process.env.CI == "true" ? "vite preview --port 5173" : "vite dev",
+  //   url:
+  //     process.env.CI == "true"
+  //       ? "https://vue3-ts-vercel-flashexus.vercel.app/"
+  //       : "http://localhost:5173",
+  //   //port: 5173,
+  //   reuseExistingServer: process.env.CI == "true" ? true : false,
+  // },
   webServer: {
-    command: process.env.CI == "true" ? "vite preview --port 5173" : "vite dev",
-    url:
-      process.env.CI == "true"
-        ? "https://vue3-ts-vercel-flashexus.vercel.app/"
-        : "http://localhost:5173",
+    command: "vite preview --port 5173",
+    url: "https://vue3-ts-vercel-flashexus.vercel.app/",
     //port: 5173,
-    reuseExistingServer: process.env.CI == "true" ? true : false,
+    reuseExistingServer: true,
   },
 });
