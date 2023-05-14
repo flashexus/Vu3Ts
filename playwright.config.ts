@@ -25,14 +25,14 @@ export default defineConfig({
     // Maximum time expect() should wait for the condition to be met.
     timeout: 2500,
   },
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  use: {
-    /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: "https://vue3-ts-vercel-flashexus.vercel.app/",
+  // /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+  // use: {
+  //   /* Base URL to use in actions like `await page.goto('/')`. */
+  //   baseURL: "https://vue3-ts-vercel-flashexus.vercel.app/",
 
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: "on-first-retry",
-  },
+  //   /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+  //   trace: "on-first-retry",
+  // },
 
   /* Configure projects for major browsers */
   projects: [
@@ -79,13 +79,6 @@ export default defineConfig({
       process.env.CI == "true"
         ? "https://vue3-ts-vercel-flashexus.vercel.app/"
         : "http://localhost:5173",
-    //port: 5173,
     reuseExistingServer: process.env.CI == "true" ? true : false,
   },
-  // webServer: {
-  //   command: "vite preview --port 5173",
-  //   url: "https://vue3-ts-vercel-flashexus.vercel.app/",
-  //   //port: 5173,
-  //   reuseExistingServer: true,
-  // },
 });
