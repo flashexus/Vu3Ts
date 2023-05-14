@@ -41,15 +41,15 @@ export default defineConfig({
       use: { ...devices["Desktop Chrome"] },
     },
 
-    {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"] },
-    },
+    // {
+    //   name: "firefox",
+    //   use: { ...devices["Desktop Firefox"] },
+    // },
 
-    {
-      name: "webkit",
-      use: { ...devices["Desktop Safari"] },
-    },
+    // {
+    //   name: "webkit",
+    //   use: { ...devices["Desktop Safari"] },
+    // },
 
     /* Test against mobile viewports. */
     // {
@@ -74,11 +74,12 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: process.env.CI ? "vite preview --port 5173" : "vite dev",
-    url: process.env.CI
-      ? "https://vue3-ts-vercel-flashexus.vercel.app/"
-      : "http://localhost:5173",
+    command: process.env.CI == "true" ? "vite preview --port 5173" : "vite dev",
+    url:
+      process.env.CI == "true"
+        ? "https://vue3-ts-vercel-flashexus.vercel.app/"
+        : "http://localhost:5173",
     //port: 5173,
-    reuseExistingServer: process.env.CI ? true : false,
+    reuseExistingServer: process.env.CI == "true" ? true : false,
   },
 });
