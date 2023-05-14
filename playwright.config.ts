@@ -79,6 +79,6 @@ export default defineConfig({
       ? "https://vue3-ts-vercel-flashexus.vercel.app/"
       : "http://localhost:5173",
     //port: 5173,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: process.env.CI,
   },
 });
