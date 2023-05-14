@@ -11,7 +11,7 @@ test("has title", async ({ page }) => {
 });
 
 test("get root items", async ({ page }) => {
-  await page.goto("baseURL");
+  await page.goto(baseURL);
 
   // ヘッダーのタイトルを確認する
   await expect(

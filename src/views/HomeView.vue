@@ -33,7 +33,7 @@ const items = [
             height="125"
           />
           <div class="wrapper">
-            <HelloWorld msg="Vue3 旅日記" />
+            <HelloWorld msg="Vue2 旅日記" />
 
             <nav>
               <span v-for="item in items" :key="item.title">
