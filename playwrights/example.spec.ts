@@ -1,13 +1,12 @@
 import { test, expect } from "@playwright/test";
-import { exec } from "child_process";
+
 const baseURL = "/";
+
 test("has title", async ({ page }) => {
   await page.goto(baseURL);
-  //  await page.screenshot({ path: `screenshot.png` });
 
   // アプリケーションのタイトルを確認する
   await expect(page).toHaveTitle("Vite App");
-  //  await expect(page).toHaveScreenshot("screenshot.png");
 });
 
 test("get root items", async ({ page }) => {
@@ -28,4 +27,18 @@ test("get article item", async ({ page }) => {
 
   // 指定のページに遷移したことを確認する
   await expect(page).toHaveURL(/.*article/);
+});
+
+test("root snapshot", async ({ page }) => {
+  await page.goto(baseURL);
+
+  // スナップショットを取得する
+  await expect(page).toHaveScreenshot();
+});
+
+test("header shanpshot", async ({ page }) => {
+  await page.goto(baseURL);
+
+  // スナップショットを取得する
+  await expect(page.locator(".v-toolbar")).toHaveScreenshot();
 });
