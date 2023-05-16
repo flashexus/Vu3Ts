@@ -34,7 +34,7 @@ export default defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL:
       process.env.CI == "true"
-        ? "https://vue3-ts-vercel-flashexus.vercel.app/"
+        ? process.env.DEPLOYMENT_URL
         : "http://localhost:5173",
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
@@ -84,7 +84,7 @@ export default defineConfig({
     command: process.env.CI == "true" ? "vite preview --port 5173" : "vite dev",
     url:
       process.env.CI == "true"
-        ? "https://vue3-ts-vercel-flashexus.vercel.app/"
+        ? process.env.DEPLOYMENT_URL
         : "http://localhost:5173",
     reuseExistingServer: process.env.CI == "true" ? true : false,
   },
