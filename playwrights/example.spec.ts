@@ -29,7 +29,7 @@ test("get article item", async ({ page }) => {
   // 指定のページに遷移したことを確認する
   await expect(page).toHaveURL(/.*article/);
 });
-console.log(process.env.CI);
+
 if (process.env.CI != "true") {
   test("root snapshot", async ({ page }) => {
     await page.goto(baseURL);
