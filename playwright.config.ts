@@ -11,6 +11,7 @@ import { defineConfig, devices } from "@playwright/test";
  */
 export default defineConfig({
   testDir: "./playwrights",
+  //  snapshotPathTemplate: "{testDir}/{testFilePath}-snapshots/{arg}{ext}",
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -24,14 +25,17 @@ export default defineConfig({
   expect: {
     // Maximum time expect() should wait for the condition to be met.
     timeout: 2500,
+    // toMatchSnapshot: {
+    //   maxDiffPixelRatio: 0.2,
+    // },
   },
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL:
-      process.env.CI == "true"
-        ? "https://vue3-ts-vercel-flashexus.vercel.app/"
-        : "http://localhost:5173",
+    // baseURL:
+    //   process.env.CI == "true"
+    //     ? "https://vue3-ts-vercel-flashexus.vercel.app/"
+    //     : "http://localhost:5173",
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
@@ -77,11 +81,9 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: process.env.CI == "true" ? "vite preview --port 5173" : "vite dev",
-    url:
-      process.env.CI == "true"
-        ? "https://vue3-ts-vercel-flashexus.vercel.app/"
-        : "http://localhost:5173",
-    reuseExistingServer: process.env.CI == "true" ? true : false,
+    command: process.env.CI ? "vite preview --port 5173" : "vite dev",
+    //url: "http://127.0.0.1:3000",
+    port: 5173,
+    reuseExistingServer: !process.env.CI,
   },
 });
